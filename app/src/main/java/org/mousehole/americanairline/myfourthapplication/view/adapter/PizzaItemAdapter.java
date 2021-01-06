@@ -4,10 +4,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import org.mousehole.americanairline.myfourthapplication.R;
 import org.mousehole.americanairline.myfourthapplication.model.Pizza;
+import org.mousehole.americanairline.myfourthapplication.util.Utilities;
 
 import java.util.List;
 
@@ -37,7 +41,7 @@ public class PizzaItemAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return (long)i;
+        return i;
     }
 
     @Override
@@ -49,18 +53,18 @@ public class PizzaItemAdapter extends BaseAdapter {
                         viewGroup,
                         false);
 
-        mainView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pizzaDelegate.selectPizza(item);
-            }
-        });
+        mainView.setOnClickListener(view1 -> pizzaDelegate.selectPizza(item));
 
         TextView pizzaFlavor = mainView.findViewById(R.id.pizza_textview);
         TextView pizzaPrice = mainView.findViewById(R.id.pizza_price_textview);
 
         pizzaFlavor.setText(item.getPizzaFlavor());
-        pizzaPrice.setText("$" + item.getPizzaPrice());
+        String price = Utilities.makePrice(item.getPizzaPrice());
+        pizzaPrice.setText(price);
+
+        ImageView pizzaImage = mainView.findViewById(R.id.pizza_icon);
+        Glide.with(mainView.getContext()).load(item.getImageUrl()).into(pizzaImage);
+
 
         return mainView;
     }

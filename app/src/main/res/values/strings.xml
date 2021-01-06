@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MyFourthApplication</string>
+    <string name="app_name">Pizza App</string>
+    <string name="this_price_is_only_per_ounce">This price is only per ounce</string>
+    <string name="details">Details</string>
 </resources>

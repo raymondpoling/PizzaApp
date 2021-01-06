@@ -44,18 +44,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".55"/>
+        app:layout_constraintGuide_percent=".60" />
 
     <ImageView
         android:id="@+id/pizza_imageview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_pizza_pepperoni"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/middle_guide"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
         android:layout_margin="16dp"
-        tools:layout_editor_absoluteX="16dp" />
+        android:src="@drawable/ic_pizza_pepperoni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/middle_guide"
+        android:contentDescription="An image of delicious pizza." />
+
+    <TextView
+        style="@style/GeneralPizzaFont"
+        android:id="@+id/pizza_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/pizza_imageview"
+        app:layout_constraintTop_toTopOf="@+id/pizza_imageview"
+        tools:text="Flavor Name" />
+
+    <TextView
+        android:id="@+id/price_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pizza_imageview"
+        app:layout_constraintStart_toEndOf="@id/pizza_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_name_textview"
+        tools:text="PRICE" />
+
+    <TextView
+        android:id="@+id/price_constant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/this_price_is_only_per_ounce"
+        android:textSize="12sp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/details_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pizza_imageview" />
+
+    <Button
+        android:id="@+id/details_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/details"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

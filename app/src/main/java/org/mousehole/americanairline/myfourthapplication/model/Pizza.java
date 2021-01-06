@@ -1,6 +1,9 @@
 package org.mousehole.americanairline.myfourthapplication.model;
 
-public class Pizza {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Pizza implements Parcelable {
 
     private String pizzaFlavor;
     private double pizzaPrice;
@@ -16,6 +19,26 @@ public class Pizza {
         this.ingredients = ingredients;
         this.imageUrl = imageUrl;
     }
+
+    protected Pizza(Parcel in) {
+        pizzaFlavor = in.readString();
+        pizzaPrice = in.readDouble();
+        calories = in.readInt();
+        ingredients = in.readString();
+        imageUrl = in.readString();
+    }
+
+    public static final Creator<Pizza> CREATOR = new Creator<Pizza>() {
+        @Override
+        public Pizza createFromParcel(Parcel in) {
+            return new Pizza(in);
+        }
+
+        @Override
+        public Pizza[] newArray(int size) {
+            return new Pizza[size];
+        }
+    };
 
     public int getCalories() {
         return calories;
@@ -55,5 +78,19 @@ public class Pizza {
 
     public void setPizzaPrice(double pizzaPrice) {
         this.pizzaPrice = pizzaPrice;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(pizzaFlavor);
+        parcel.writeDouble(pizzaPrice);
+        parcel.writeInt(calories);
+        parcel.writeString(ingredients);
+        parcel.writeString(imageUrl);
     }
 }
