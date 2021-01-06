@@ -8,9 +8,9 @@ page which is basically just shows the details of the pizza object. See diagram 
 
 ## Screen Shots
 
-![Home View](https://raw.githubusercontent.com/raymondpoling/PizzaApp/master/screenshot-1.png)
+![Home View](https://raw.githubusercontent.com/raymondpoling/PizzaApp/master/screenshot-1.png =256x)
 
-![Selected View](https://raw.githubusercontent.com/raymondpoling/PizzaApp/master/screenshot-2.png)
+![Selected View](https://raw.githubusercontent.com/raymondpoling/PizzaApp/master/screenshot-2.png =256x)
 
-![Detail View](https://raw.githubusercontent.com/raymondpoling/PizzaApp/master/screenshot-3.png)
+![Detail View](https://raw.githubusercontent.com/raymondpoling/PizzaApp/master/screenshot-3.png =256x)
 
