@@ -18,14 +18,14 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_tom_pizza_waiter_without_menues"
+            android:src="@drawable/ic_pizza_pepperoni"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             style="@style/GeneralPizzaFont"
-            android:id="@+id/textView"
+            android:id="@+id/pizza_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -36,13 +36,14 @@
             app:layout_constraintTop_toTopOf="@+id/pizza_icon" />
 
         <TextView
+            android:id="@+id/pizza_price_textview"
             style="@style/GeneralPriceFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/pizza_textview"
             tools:text="$18.00" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

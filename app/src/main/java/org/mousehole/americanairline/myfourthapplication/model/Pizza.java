@@ -5,9 +5,40 @@ public class Pizza {
     private String pizzaFlavor;
     private double pizzaPrice;
 
-    public Pizza(String pizzaFlavor, double pizzaPrice) {
+    private int calories;
+    private String ingredients;
+    private String imageUrl;
+
+    public Pizza(String pizzaFlavor, double pizzaPrice, int calories, String ingredients, String imageUrl) {
         this.pizzaFlavor = pizzaFlavor;
         this.pizzaPrice = pizzaPrice;
+        this.calories = calories;
+        this.ingredients = ingredients;
+        this.imageUrl = imageUrl;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getPizzaFlavor() {
